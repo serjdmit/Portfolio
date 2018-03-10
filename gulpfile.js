@@ -5,6 +5,11 @@ const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
+
 const del = require('del');
 
 const browserSync = require('browser-sync').create();
@@ -25,6 +30,10 @@ const paths = {
     },    
     images: {
         src: 'src/images/**/*.*',
+        dest: 'build/assets/images/'
+    },
+    sprites: {
+        src: 'src/images/svg/*.*',
         dest: 'build/assets/images/'
     },
     scripts: {
@@ -50,6 +59,43 @@ function styles() {
         .pipe(gulp.dest(paths.styles.dest))
 }
 
+// svg
+function sprites() {
+	return gulp.src('./src/images/svg/*.svg')
+	// minify svg
+		.pipe(svgmin({
+			js2svg: {
+				pretty: true
+			}
+		}))
+		// remove all fill, style and stroke declarations in out shapes
+		.pipe(cheerio({
+			run: function ($) {
+				$('[fill]').removeAttr('fill');
+				$('[stroke]').removeAttr('stroke');
+				$('[style]').removeAttr('style');
+			},
+			parserOptions: {xmlMode: true}
+		}))
+		// cheerio plugin create unnecessary string '&gt;', so replace it.
+		.pipe(replace('&gt;', '>'))
+		// build svg sprite
+		.pipe(svgSprite({
+			mode: {
+				symbol: {
+					sprite: "../sprite.svg",
+					render: {
+						scss: {
+							dest:'./src/styles/common/_sprite.scss',
+							template: './src/styles/common/_sprite_template.scss'
+						}
+					}
+				}
+			}
+		}))
+		.pipe(gulp.dest('./src/images/sprite/'));
+}
+
 // очистка
 function clean() {
     return del(paths.root);
@@ -67,6 +113,7 @@ function watch() {
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.templates.src, templates);
     gulp.watch(paths.images.src, images);
+    gulp.watch(paths.sprites.src, sprites);
     gulp.watch(paths.scripts.src, scripts);
 }
 
@@ -87,10 +134,11 @@ function images() {
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
+exports.sprites = sprites;
 exports.images = images;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, scripts),
+    gulp.parallel(styles, templates, images, sprites, scripts),
     gulp.parallel(watch, server)
 ));

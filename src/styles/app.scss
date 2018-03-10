@@ -1,7 +1,9 @@
+@import '../../bower_components/singularity/stylesheets/singularitygs';
+
 body{
     margin: 100px;
-    background: #ccc
 }
 @import 'common/menu';
 @import 'common/technologies';
 @import 'common/slider';
+@import 'pages/welcome';

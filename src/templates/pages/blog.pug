@@ -2,6 +2,7 @@ extends ../template
 
 block variables
     - var title = 'Блог'
+    - var script = 'blog.js'
 
 block content
     h1 Блог
@@ -15,3 +16,6 @@ block content
         li
             h2 Последняя статья
             p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Курсивных то осталось за.
+
+        block script
+            script(src='/assets/scripts/blog.js' defer)

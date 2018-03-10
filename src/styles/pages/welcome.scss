@@ -1,0 +1,17 @@
+@include add-grid(12);
+@include add-gutter(1/3);
+@include add-gutter-style('split');
+
+@include sgs-change('debug', true);
+
+.container {
+    @include background-grid($color: blue);
+}
+
+h1 {
+    @include grid-span(4, 3);
+}
+
+form {
+    @include grid-span(4, 3);
+}

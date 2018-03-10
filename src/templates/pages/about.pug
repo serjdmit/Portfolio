@@ -2,7 +2,11 @@ extends ../template
 
 block variables
     - var title = 'Обо мне'
+    - var script = '/assets/scripts/about.js'
 
 block content
     h1 Обо мне
     include ../common/technologies.pug
+
+block script
+    script(src='/assets/scripts/about.js' defer)
