@@ -30,13 +30,20 @@ const paths = {
     },    
     images: {
         src: 'src/images/**/*.*',
-        dest: 'build/assets/images/'
+        dest: 'build/assets/images/',
+        sprite: './src/images/sprite/'
     },
     sprites: {
         src: 'src/images/svg/*.*',
-        dest: 'build/assets/images/'
+        dest: 'build/assets/images/',
+        sprite: '../sprite.svg',
+        scss: {
+            dest:'./src/styles/common/_sprite.scss',
+			template: './src/styles/common/_sprite_template.scss' 
+        }
     },
     scripts: {
+        app: 'src/scripts/app.js',
         src: 'src/scripts/**/*.js',
         dest: 'build/assets/scripts/'
     }
@@ -51,7 +58,7 @@ function templates() {
 
 // scss
 function styles() {
-    return gulp.src('./src/styles/app.scss')
+    return gulp.src(paths.styles.src)
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(sourcemaps.write())
@@ -61,7 +68,7 @@ function styles() {
 
 // svg
 function sprites() {
-	return gulp.src('./src/images/svg/*.svg')
+	return gulp.src(paths.sprites.src)
 	// minify svg
 		.pipe(svgmin({
 			js2svg: {
@@ -83,17 +90,17 @@ function sprites() {
 		.pipe(svgSprite({
 			mode: {
 				symbol: {
-					sprite: "../sprite.svg",
+					sprite: paths.sprites.sprite,
 					render: {
 						scss: {
-							dest:'./src/styles/common/_sprite.scss',
-							template: './src/styles/common/_sprite_template.scss'
+							dest: paths.sprites.scss.dest,
+							template: paths.sprites.scss.template
 						}
 					}
 				}
 			}
 		}))
-		.pipe(gulp.dest('./src/images/sprite/'));
+		.pipe(gulp.dest(paths.images.sprite));
 }
 
 // очистка
@@ -103,7 +110,7 @@ function clean() {
 
 // webpack
 function scripts() {
-    return gulp.src('src/scripts/app.js')
+    return gulp.src(paths.scripts.app)
         .pipe(gulpWebpack(webpackConfig, webpack)) 
         .pipe(gulp.dest(paths.scripts.dest));
 }
