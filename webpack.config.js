@@ -20,14 +20,18 @@ const config = {
         rules: [
           {
             test: /\.js$/,
-            exclude: /node_modules/,
+            exclude: /(node_modules|bower_components)/,
             loader: "babel-loader",
             query: {
                 "presets": [
                     "env"
                 ]
             }
-          }
+          },
+          {
+            test: /\.css$/,
+            use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+          } 
         ]
     },
     optimization: {
@@ -39,7 +43,7 @@ const config = {
             cacheGroups: {
                 default: false,
                 commons: {
-                    test: /node_modules/,
+                    test: /(node_modules|bower_components)/,
                     name: "common",
                     chunks: "initial",
                     minSize: 1

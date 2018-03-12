@@ -4,6 +4,7 @@ const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
+const moduleImporter = require('sass-module-importer');
 
 const svgSprite = require('gulp-svg-sprite');
 const svgmin = require('gulp-svgmin');
@@ -60,7 +61,10 @@ function templates() {
 function styles() {
     return gulp.src(paths.styles.src)
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(sass({
+            outputStyle: 'compressed',
+            importer: moduleImporter()
+        }))
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.styles.dest))
