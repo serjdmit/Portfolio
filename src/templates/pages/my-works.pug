@@ -2,8 +2,9 @@ extends ../template
 
 block variables
     - var title = 'Мои работы'
-    - var script = 'works'
 
 block content
     h1 Мои работы
     include ../common/slider.pug
+        block script
+            script(src='/assets/scripts/works.js')

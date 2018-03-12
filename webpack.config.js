@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 
 const config = {
     entry: {
@@ -8,6 +9,7 @@ const config = {
         index: './src/scripts/pages/welcome.js'
     },
     output: {
+        path: path.resolve(__dirname, './dist'),
         filename: '[name].js'
     },
     plugins: [
@@ -20,18 +22,14 @@ const config = {
         rules: [
           {
             test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
+            exclude: /node_modules/,
             loader: "babel-loader",
             query: {
                 "presets": [
                     "env"
                 ]
             }
-          },
-          {
-            test: /\.css$/,
-            use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
-          } 
+          }
         ]
     },
     optimization: {
@@ -43,7 +41,7 @@ const config = {
             cacheGroups: {
                 default: false,
                 commons: {
-                    test: /(node_modules|bower_components)/,
+                    test: /(node_modules|jquery)/,
                     name: "common",
                     chunks: "initial",
                     minSize: 1
@@ -51,7 +49,7 @@ const config = {
             }
         }
     },
-    mode: 'development'
+    mode: 'production'
 };
 
 module.exports = config;
