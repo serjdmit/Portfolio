@@ -1,7 +1,6 @@
 console.log($);
-import '../common/slider';
+const slider = require('../common/slider');
 
-// slider();
-sliderInit();
+slider();
 
 console.log('works');

@@ -49,7 +49,7 @@ const config = {
             }
         }
     },
-    mode: 'production'
+    mode: 'development'
 };
 
 module.exports = config;

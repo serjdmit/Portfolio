@@ -4,13 +4,29 @@ block variables
     - var title = 'Добро пожаловать'
 
 block content
-    div.container
-        h1 Главная
-        form
-            label(for="email") email
-            input(name="email" id="email")
-            label(for="password") password
-            input(name="password" id="password")
-            button Войти
+    .container.welcome
+        video.video(autoplay="autoplay" loop="loop")
+            source(src="assets/video/night.mp4")
+        img.background-mountains(src="assets/images/mountains.png")
+        button.auth Авторизоваться
+
+        .hero
+            img.hero__avatar(src="https://loftschool.com/uploads/avatars/7d1f9q12192_s300.jpeg", alt="Avatar")
+            h1.hero__name Сергей Дмитриев
+            span.hero__description Личный сайт веб-разработчика
+            .hero__links
+                a.hero__links--link.vk(href="https://vk.com/mr.dmit")
+                a.hero__links--link.github(href="https://github.com/serjdmit")
+                a.hero__links--link.in(href="https://www.linkedin.com/in/mrdmit/")
+
+        footer.footer © Сергей Дмитриев | создано с любовью в LoftSchool | 2018
+
+        //- h1 Главная
+        //- form
+        //-     label(for="email") email
+        //-     input(name="email" id="email")
+        //-     label(for="password") password
+        //-     input(name="password" id="password")
+        //-     button Войти
         block script
             script(src='./assets/scripts/index.js')

@@ -15,3 +15,100 @@
 // form {
 //     @include grid-span(4, 3);
 // }
+
+$blue: #0548be;
+$dark_blue: #083c96;
+$grey: #474b57;
+$red: #e44845;
+
+.welcome {
+    width: 100%;
+
+    .video {
+        position: fixed;
+        left: 0;
+        top: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 0;
+    }
+
+    .background-mountains {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        min-width: 100%;
+        z-index: 1;
+    }
+
+    .auth {
+        background: none;
+        color: #fff;
+        position: absolute;
+        top: 25px;
+        right: 100px;
+        border: 1px solid #fff;
+        padding: 15px 25px;
+        font: 16px Helvetica, sans-serif;
+        transition: ease-in-out .2s;
+
+        &:hover {
+            cursor: pointer;
+            background: $dark_blue;
+            border-color: $dark_blue;
+        }
+    }
+
+    .hero {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        z-index: 2;
+        padding: 40px 70px;
+        background: rgba(28, 31, 41, .5);
+
+        &__avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        &__name {
+            font: 28px Helvetica, sans-serif;
+            color: #fff;
+            display: block;
+        }
+
+        &__description {
+            font: 16px Helvetica, sans-serif;
+            color: #fff;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        &__links {
+            display: block;
+
+            &--link {
+                display: inline-block;
+            }
+        }
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font: 16px Helvetica, sans-serif;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        z-index: 2;
+    }
+}

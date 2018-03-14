@@ -1,8 +1,10 @@
 @import 'normalize.css';
 @import 'singularitygs';
 
+$bg-color: #223b65; 
+
 body{
-    margin: 100px;
+    background: $bg-color;
 }
 @import 'common/menu';
 @import 'common/technologies';

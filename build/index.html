@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="/assets/styles/app.min.css">
   </head>
   <body>
-    <div class="container">
-      <h1>Главная</h1>
-      <form>
-        <label for="email">email</label>
-        <input name="email" id="email">
-        <label for="password">password</label>
-        <input name="password" id="password">
-        <button>Войти</button>
-      </form>
+    <div class="container welcome">
+      <video class="video" autoplay="autoplay" loop="loop">
+        <source src="assets/video/night.mp4">
+      </video><img class="background-mountains" src="assets/images/mountains.png">
+      <button class="auth">Авторизоваться</button>
+      <div class="hero"><img class="hero__avatar" src="https://loftschool.com/uploads/avatars/7d1f9q12192_s300.jpeg" alt="Avatar">
+        <h1 class="hero__name">Сергей Дмитриев</h1><span class="hero__description">Личный сайт веб-разработчика</span>
+        <div class="hero__links"><a class="hero__links--link vk" href="https://vk.com/mr.dmit"></a><a class="hero__links--link github" href="https://github.com/serjdmit"></a><a class="hero__links--link in" href="https://www.linkedin.com/in/mrdmit/"></a></div>
+      </div>
+      <footer class="footer">© Сергей Дмитриев | создано с любовью в LoftSchool | 2018</footer>
       <script src="./assets/scripts/index.js"></script>
     </div>
     <h2>Меню</h2>
@@ -28,6 +29,7 @@
       <li><a href="my-works.html">Мои работы</a></li>
       <li><a href="blog.html">Блог</a></li>
     </ul>
+    <script src="./assets/scripts/common.js"></script>
     <script src="./assets/scripts/index.js"></script>
   </body>
 </html>

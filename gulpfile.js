@@ -34,6 +34,10 @@ const paths = {
         dest: 'build/assets/images/',
         sprite: './src/images/sprite/'
     },
+    video: {
+        src: 'src/video/*.*',
+        dest: 'build/assets/video/'
+    },
     sprites: {
         src: 'src/images/svg/*.*',
         dest: 'build/assets/images/',
@@ -124,6 +128,7 @@ function watch() {
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.templates.src, templates);
     gulp.watch(paths.images.src, images);
+    gulp.watch(paths.video.src, images);
     gulp.watch(paths.sprites.src, sprites);
     gulp.watch(paths.scripts.src, scripts);
 }
@@ -142,14 +147,21 @@ function images() {
         .pipe(gulp.dest(paths.images.dest));
 }
 
+// просто переносим видео
+function video() {
+    return gulp.src(paths.video.src)
+        .pipe(gulp.dest(paths.video.dest));
+}
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.sprites = sprites;
 exports.images = images;
+exports.video = video;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, sprites, scripts),
+    gulp.parallel(styles, templates, images, video, sprites, scripts),
     gulp.parallel(watch, server)
 ));
