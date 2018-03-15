@@ -1,0 +1,57 @@
+.section {
+    &.hero {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero__links {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+
+        .socials {
+            padding: 0;
+
+            &__item {
+                display: inline-block;
+                margin-right: 25px;
+            }
+
+            &__link {
+                font-size: 0.001px;
+                text-decoration: none;
+                font-family: "Font Awesome";
+                color: #fff;
+                transition: ease-in-out .2s;
+
+                &:hover {
+                    color: #004cd1;
+                }
+
+                &_vk {
+                    &:before {
+                        content: "\f189";
+                        font-size: 2rem;
+                    }
+                }
+                &_git {
+                    &:before {
+                        content: "\f113";
+                        font-size: 2rem;
+                    }
+                }
+                &_in {
+                    &:before {
+                        content: "\f0e1";
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    
+}

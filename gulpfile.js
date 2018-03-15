@@ -38,6 +38,10 @@ const paths = {
         src: 'src/video/*.*',
         dest: 'build/assets/video/'
     },
+    fonts: {
+        src: 'src/fonts/**/*.*',
+        dest: 'build/assets/fonts/'
+    },
     sprites: {
         src: 'src/images/svg/*.*',
         dest: 'build/assets/images/',
@@ -128,7 +132,8 @@ function watch() {
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.templates.src, templates);
     gulp.watch(paths.images.src, images);
-    gulp.watch(paths.video.src, images);
+    gulp.watch(paths.video.src, video);
+    gulp.watch(paths.fonts.src, fonts);
     gulp.watch(paths.sprites.src, sprites);
     gulp.watch(paths.scripts.src, scripts);
 }
@@ -153,15 +158,22 @@ function video() {
         .pipe(gulp.dest(paths.video.dest));
 }
 
+// просто переносим шрифты
+function fonts() {
+    return gulp.src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dest));
+}
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.sprites = sprites;
 exports.images = images;
 exports.video = video;
+exports.fonts = fonts;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, video, sprites, scripts),
+    gulp.parallel(styles, templates, images, video, fonts, sprites, scripts),
     gulp.parallel(watch, server)
 ));

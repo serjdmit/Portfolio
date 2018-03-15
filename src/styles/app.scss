@@ -6,7 +6,9 @@ $bg-color: #223b65;
 body{
     background: $bg-color;
 }
+@import 'common/_fonts';
 @import 'common/menu';
 @import 'common/technologies';
 @import 'common/slider';
 @import 'pages/welcome';
+@import 'pages/about';
