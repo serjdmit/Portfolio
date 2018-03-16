@@ -1,19 +1,14 @@
-.section {
-    &.hero {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+.hero {
 
-    .hero__links {
+    &__links {
         position: absolute;
         top: 30px;
         left: 30px;
+        z-index: 2;
 
         .socials {
             padding: 0;
+            margin: 0;
 
             &__item {
                 display: inline-block;
@@ -53,5 +48,105 @@
         }
     }
 
-    
+    // &__menu {
+    //     &.hamburger {
+    //         font-family: 'Font Awesome';
+    //         color: #fff;
+    //         position: absolute;
+    //         top: 25px;
+    //         right: 25px;
+    //         z-index: 2;
+    //         transition: .2s ease-in-out;
+
+    //         &:before {
+    //             content: '\f0c9';
+    //             font-size: 2rem;
+    //         }
+
+    //         &:hover {
+    //             cursor: pointer;
+
+    //             &:before {
+    //                 content: '\f00d';
+    //             }
+    //         }
+    //     }
+    // }
+
+    &__menu {
+        &.hamburger {
+            color: #fff;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 2;
+            transition: .2s ease-in-out;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+
+        .section-title{
+
+            &__video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                min-width: 100%;
+                min-height: 100%;
+                z-index: 0;
+            }
+            &__img {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+    }
+
+    &__user {
+        background: url(../images/user_darts_bg.png) no-repeat;
+        background-position: top center;
+        background-size: contain;
+        width: 580px;
+        z-index: 2;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%,-50%,0);
+        text-align: center;
+    }
+}
+
+.user {
+    &__pic {
+        padding: 20px;
+    }
+    &__avatar{
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+    }
+
+    &__description {
+        padding: 10px;
+        color: #fff;
+        font-family: 'Roboto', Arial, sans-serif;
+    }
+    &__name {
+        font-size: 2.1875rem;
+        padding-bottom: 5px;
+    }
+    &__desc {
+        font-size: 1rem;
+    }
 }

@@ -47,8 +47,8 @@ const paths = {
         dest: 'build/assets/images/',
         sprite: '../sprite.svg',
         scss: {
-            dest:'./src/styles/common/_sprite.scss',
-			template: './src/styles/common/_sprite_template.scss' 
+            dest:'../../../styles/common/_sprite.scss',
+			template: 'src/styles/template/_sprite_template.scss' 
         }
     },
     scripts: {
@@ -102,7 +102,10 @@ function sprites() {
 		.pipe(svgSprite({
 			mode: {
 				symbol: {
-					sprite: paths.sprites.sprite,
+                    sprite: paths.sprites.sprite,
+                    example: {
+                        dest: '../tmp/spriteSvgDemo.html'
+                    },
 					render: {
 						scss: {
 							dest: paths.sprites.scss.dest,

@@ -3,12 +3,18 @@
 
 $bg-color: #223b65; 
 
-body{
+html, body {
     background: $bg-color;
+    height: 100%;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 @import 'common/_fonts';
+@import 'common/_sprite';
 @import 'common/menu';
 @import 'common/technologies';
 @import 'common/slider';
+@import 'common/section';
 @import 'pages/welcome';
 @import 'pages/about';
