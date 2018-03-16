@@ -18,7 +18,8 @@ block content
                     li.socials__item
                         a(href=`${item[1]}` class=`socials__link_${item[0]}`).socials__link #{item[0]}
         .hero__menu.hamburger
-            svg(width="40" height="35").svg-hamburger-dims
+            svg(width="40" height="35")
+                use(xlink:href="../assets/images/sprite/sprite.svg#hamburger")
         .hero__title
             .section-title
                 video.section-title__video(autoplay="autoplay" loop="loop" src="assets/video/night.mp4")
@@ -30,10 +31,11 @@ block content
                     .user__name Сергей Дмитриев
                     .user__desc Личный сайт разработчика
         .arrow-down.hero__scroll-button
+            svg(width="25.18" height="16.164")
+                use(xlink:href="../assets/images/sprite/sprite.svg#arrow_down")
     main.section.about
         .about__left
             .triangle.about__triangle-left
-                svg.triangle-shape.triangle-shape_fill_white
             .about__left-title
                 .block-title Обо мне
             .about__left-description
@@ -48,7 +50,6 @@ block content
                         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ad ducimus enim, nostrum perferendis, incidunt exercitationem eum rem ratione expedita repellendus est necessitatibus laborum sed! Debitis rerum iusto quae alias.
         .about__right
             .triangle.about__triangle-right
-                svg.triangle-shape.triangle-shape_fill_beige
             .about__right-title
                 .block-subtitle Чем я могу быть вам полезен
             .about__right-description.text-content
