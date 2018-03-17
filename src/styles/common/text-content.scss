@@ -1,0 +1,32 @@
+.text-content {
+    color: #474b57;
+    font-size: 1rem;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    font-weight: 300;
+
+    p {
+        color: #474b57;
+        font-size: 1rem;
+        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        font-weight: 300;
+    }
+
+    strong, b, a {
+        font-weight: 400;
+        color: #0548be;
+    }
+
+    a {
+        text-decoration: none;
+        border-bottom: 2px solid #0548be;
+        transition: ease-in-out .2s;
+        padding-bottom: 2px;
+
+        &:hover {
+            border-color: transparent;
+            cursor: pointer;
+        }
+    }
+}

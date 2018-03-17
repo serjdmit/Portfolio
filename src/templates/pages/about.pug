@@ -36,36 +36,40 @@ block content
     main.section.about
         .about__left
             .triangle.about__triangle-left
-            .about__left-title
-                .block-title Обо мне
-            .about__left-description
-                .user-description
-                    .user-description__image
-                        img.user-description__avatar(src="assets/images/avatar.jpg", alt="Avatar")
-                    .user-description__title
-                        .block-subtitle Кто я
-                    .user-description__text.text-content
-                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia provident repellat quisquam qui ducimus officiis saepe tempora obcaecati ea accusantium quos minus reiciendis voluptate adipisci voluptas doloribus laborum, accusamus quia!
-                        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum minus aliquid cupiditate perferendis animi repellendus! Rerum, voluptatibus repudiandae quam, dignissimos accusantium repellat praesentium alias dicta harum asperiores totam autem nesciunt.
-                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ad ducimus enim, nostrum perferendis, incidunt exercitationem eum rem ratione expedita repellendus est necessitatibus laborum sed! Debitis rerum iusto quae alias.
+            .about__left-container
+                .about__left-title
+                    .block-title Обо мне
+                .about__left-description
+                    .user-description
+                        .user-description__image
+                            img.user-description__avatar(src="assets/images/avatar.jpg", alt="Avatar")
+                        .user-description__title
+                            .block-subtitle Кто я
+                        .user-description__text.text-content
+                            strong Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia provident repellat quisquam qui ducimus officiis saepe tempora obcaecati ea accusantium quos minus reiciendis voluptate adipisci voluptas doloribus laborum, accusamus quia!
+                            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum minus aliquid cupiditate perferendis animi repellendus! Rerum, voluptatibus repudiandae quam, dignissimos accusantium repellat praesentium alias dicta harum asperiores totam autem nesciunt.
+                                a lorem
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ad ducimus enim, nostrum perferendis, incidunt exercitationem eum rem ratione expedita repellendus est necessitatibus laborum sed! Debitis rerum iusto quae alias.
+                            a(href="#") Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate corporis obcaecati error, modi quibusdam incidunt autem consequatur doloremque ipsa repellat animi facere asperiores aliquid exercitationem ratione fuga ut ea cum.
         .about__right
             .triangle.about__triangle-right
-            .about__right-title
-                .block-subtitle Чем я могу быть вам полезен
-            .about__right-description.text-content
-                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, amet facere dolor doloremque at aliquid optio quia alias tenetur nobis magni porro! Consectetur quam magnam dicta ipsa, architecto quibusdam nisi.
-            .about__right-content
-                ul.skills-list
-                    each item in ['frontend', 'backend', 'workflow']
-                        li.skills-list__item
-                            .skills-row
-                                .skills-row__title #{item}
-                                ul.skills-row__list
-                                    each skill in ['Html5', 'css3', 'JavaScript']
-                                        li.skills-row__item
-                                            .skill
-                                                svg.skill__circle
-                                                    .skill__title #{skill}
+            .about__right-container
+                .about__right-title
+                    .block-subtitle Чем я могу быть вам полезен
+                .about__right-description.text-content
+                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, amet facere dolor doloremque at aliquid optio quia alias tenetur nobis magni porro! Consectetur quam magnam dicta ipsa, architecto quibusdam nisi.
+                .about__right-content
+                    ul.skills-list
+                        each item in ['frontend', 'backend', 'workflow']
+                            li.skills-list__item
+                                .skills-row
+                                    .skills-row__title #{item}
+                                    ul.skills-row__list
+                                        each skill in ['Html5', 'css3', 'JavaScript']
+                                            li.skills-row__item
+                                                .skill
+                                                    svg.skill__circle
+                                                        .skill__title #{skill}
 
     section.section.map
         .google-map
