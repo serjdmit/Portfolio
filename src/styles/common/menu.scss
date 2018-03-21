@@ -1,8 +1,99 @@
-.menu{
-    display: none;
+.hamburger {
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    top: 25px;
+    right: 25px;
+    z-index: 50;
+    transition: .2s ease-in-out;
+    cursor: pointer;        
+    opacity: .7;
+
+    &__stick {
+        height: 6px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        border-radius: 3px;
+        background: #fff;
+        position: absolute;
+        transition: ease-in-out .2s;
+
+        &-1 { top: 0; }
+        &-2 {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &-3 { bottom: 0; }
+    }
+
+    &__open {
+        .hamburger__stick {
+    
+            &-1 {
+                transform: rotate(45deg);
+                transform-origin: left;
+            }
+            &-2 {
+                top: 50%;
+                transform: translate(-100%);
+                opacity: 0;
+            }
+            &-3 {
+                transform: rotate(-45deg);
+                transform-origin: left;
+            }
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.top-menu {
+    position: fixed;
     padding: 0;
+    left: 0;
+    top: -16px;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(24, 54, 105, .87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: -30;
+    transition: opacity ease-in-out .2s;
+    opacity: 0;
+
     li{
-        display: inline-block;
         list-style: none;
+        padding-bottom: 30px;
+        padding-top: 60px;
+
+        a {
+            color: #fff;
+            font-size: 3.9375rem;
+            font-family: 'Sansus Webissimo', Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        &:after {
+            content: '';
+            height: 2px;
+            width: 90px;
+            margin: 0 auto;
+            background: #fff;
+            display: block;
+        }
+    }
+
+    &__open {
+        z-index: 30;
+        opacity: 30;
     }
 }

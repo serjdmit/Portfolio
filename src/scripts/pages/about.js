@@ -1,1 +1,2 @@
-console.log('about page');
+import '../common/menu';
+import '../common/map';

@@ -18,8 +18,11 @@ block content
                     li.socials__item
                         a(href=`${item[1]}` class=`socials__link_${item[0]}`).socials__link #{item[0]}
         .hero__menu.hamburger
-            svg(width="40" height="35")
-                use(xlink:href="../assets/images/sprite/sprite.svg#hamburger")
+            span.hamburger__stick.hamburger__stick-1
+            span.hamburger__stick.hamburger__stick-2
+            span.hamburger__stick.hamburger__stick-3
+            //- svg(width="40" height="35")
+            //-     use(xlink:href="../assets/images/sprite/sprite.svg#hamburger")
         .hero__title
             .section-title
                 video.section-title__video(autoplay="autoplay" loop="loop" src="assets/video/night.mp4")
@@ -33,9 +36,12 @@ block content
         .arrow-down.hero__scroll-button
             svg(width="25.18" height="16.164")
                 use(xlink:href="../assets/images/sprite/sprite.svg#arrow_down")
+        .triangle
+            svg(viewbox="0 0 1000 85").hero__triangle
+                polygon(points="0,0   0,86   500.8,86   500.8,75.5").hero__triangle-left
+                polygon(points="1000,0   1000,86   500,86   500,75.5").hero__triangle-right
     main.section.about
         .about__left
-            .triangle.about__triangle-left
             .about__left-container
                 .about__left-title
                     .block-title Обо мне
@@ -52,7 +58,6 @@ block content
                             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ad ducimus enim, nostrum perferendis, incidunt exercitationem eum rem ratione expedita repellendus est necessitatibus laborum sed! Debitis rerum iusto quae alias.
                             a(href="#") Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate corporis obcaecati error, modi quibusdam incidunt autem consequatur doloremque ipsa repellat animi facere asperiores aliquid exercitationem ratione fuga ut ea cum.
         .about__right
-            .triangle.about__triangle-right
             .about__right-container
                 .about__right-title
                     .block-subtitle Чем я могу быть вам полезен

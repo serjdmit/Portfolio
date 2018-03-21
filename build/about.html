@@ -18,11 +18,7 @@
           <li class="socials__item"><a class="socials__link_in socials__link" href="https://www.linkedin.com/in/mrdmit/">in</a></li>
         </ul>
       </div>
-      <div class="hero__menu hamburger">
-        <svg width="40" height="35">
-          <use xlink:href="../assets/images/sprite/sprite.svg#hamburger"></use>
-        </svg>
-      </div>
+      <div class="hero__menu hamburger"><span class="hamburger__stick hamburger__stick-1"></span><span class="hamburger__stick hamburger__stick-2"></span><span class="hamburger__stick hamburger__stick-3"></span></div>
       <div class="hero__title">
         <div class="section-title">
           <video class="section-title__video" autoplay="autoplay" loop="loop" src="assets/video/night.mp4"></video><img class="section-title__img" src="assets/images/mountains.png">
@@ -40,10 +36,15 @@
           <use xlink:href="../assets/images/sprite/sprite.svg#arrow_down"></use>
         </svg>
       </div>
+      <div class="triangle">
+        <svg class="hero__triangle" viewbox="0 0 1000 85">
+          <polygon class="hero__triangle-left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+          <polygon class="hero__triangle-right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+        </svg>
+      </div>
     </section>
     <main class="section about">
       <div class="about__left">
-        <div class="triangle about__triangle-left"></div>
         <div class="about__left-container">
           <div class="about__left-title">
             <div class="block-title">Обо мне</div>
@@ -63,7 +64,6 @@
         </div>
       </div>
       <div class="about__right">
-        <div class="triangle about__triangle-right"></div>
         <div class="about__right-container">
           <div class="about__right-title">
             <div class="block-subtitle">Чем я могу быть вам полезен</div>
@@ -240,12 +240,13 @@
         </div>
       </div>
     </footer>
-    <ul class="menu">
+    <ul class="top-menu">
       <li><a href="/index.html">Главная</a></li>
       <li><a href="/about.html">Обо мне</a></li>
       <li><a href="/my-works.html">Мои работы</a></li>
       <li><a href="/blog.html">Блог</a></li>
     </ul>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfs1fk5Sqwx-lCxh8VLZo0--sGBM_r6Y"></script>
     <script src="./assets/scripts/common.js"></script>
     <script src="/assets/scripts/about.js" defer></script>
   </body>
