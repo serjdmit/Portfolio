@@ -1,0 +1,165 @@
+.footer {
+    z-index: 20;
+    height: 0;
+    position: relative;
+
+    &__row {
+        position: absolute;
+
+        &--top {
+            bottom: 38px;
+            background: rgba(28, 41, 21, .85);
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+        &--bottom {
+            bottom: 0px;
+            background: rgba(8, 60, 150, .85);
+            height: 38px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+
+            p {
+                font-family: 'Roboto', Arial, Helvetica, sans-serif;
+                font-weight: 200;
+                font-size: 1rem;
+                color: #fff;
+            }
+        }
+    }
+
+    &__col {
+        width: 33.333%;
+        padding: 30px;
+
+        p {
+            margin: 0;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            font-weight: 200;
+            font-size: 1rem;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        &--left {
+            position: relative;
+
+            &:after {
+                content: '';
+                height: 90px;
+                width: 2px;
+                background: #63656c;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: .85;
+            }
+        }
+
+        &--center {
+            .menu {
+                &__list {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                &__item {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                &__link {
+                    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    color: #fff;
+                    transition: ease-in-out .2s;
+                    white-space: nowrap;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #004cd1;
+                    }
+                }
+            }
+
+            .socials {
+                padding: 0;
+                margin: 0;
+                padding-left: 15px;
+                padding-top: 30px;
+    
+                &__item {
+                    display: inline-block;
+                    margin-right: 25px;
+                }
+    
+                &__link {
+                    font-size: 0.001px;
+                    text-decoration: none;
+                    font-family: "Font Awesome";
+                    color: #9e9fa3;
+                    transition: ease-in-out .2s;
+    
+                    &:hover {
+                        color: #004cd1;
+                    }
+    
+                    &_vk {
+                        &:before {
+                            content: "\f189";
+                            font-size: 2rem;
+                        }
+                    }
+                    &_git {
+                        &:before {
+                            content: "\f113";
+                            font-size: 2rem;
+                        }
+                    }
+                    &_in {
+                        &:before {
+                            content: "\f0e1";
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--right {
+            position: relative;
+
+            &:before {
+                content: '';
+                height: 90px;
+                width: 2px;
+                background: #63656c;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: .85;
+            }
+
+            .contact-list {
+                padding-left: 30px;
+
+                &__contact {
+                    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+                    font-weight: 200;
+                    font-size: 1rem;
+                    color: #fff;
+                    padding-bottom: 15px;
+                }
+            }
+        }
+    }
+}
