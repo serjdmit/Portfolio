@@ -84,17 +84,19 @@ block content
             .contacts
                 .contacts__title
                     .block-subtitle Контакты
-                    ul.contacts__list
+                ul.contacts__list
                     -
                         var contacts = [
                             ['skype', 'rockstar2006'],
-                            ['mail', 'mr.dmit@gmail.com'],
-                            ['phone', '+372 5309 3334'],
-                            ['mark', 'Tallinn']
+                            ['envelope_n', 'mr.dmit@gmail.com'],
+                            ['phone_n', '+372 5309 3334'],
+                            ['map_n', 'Tallinn']
                         ]
                     each contact in contacts
                         li.contacts__item.contacts-row
-                            .contacts-row__icon #{contact[0]}
+                            .contacts-row__icon
+                                svg(width="45" height="45")
+                                    use(xlink:href=`../assets/images/sprite/sprite.svg#${contact[0]}`)
                             .contacts-row__title #{contact[1]}
 
     footer.footer

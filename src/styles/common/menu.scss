@@ -89,6 +89,14 @@
             margin: 0 auto;
             background: #fff;
             display: block;
+            opacity: 0;
+            transition: ease-in-out .2s;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
         }
     }
 

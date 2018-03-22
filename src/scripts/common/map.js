@@ -6,111 +6,192 @@ function initMap() {
     zoom: 16,
     scrollwheel: false,
     styles: [
-    {
-        "featureType": "administrative",
-        "stylers": [
+        {
+          "elementType": "geometry",
+          "stylers": [
             {
-                "visibility": "off"
+              "color": "#f5f5f5"
             }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "stylers": [
+          ]
+        },
+        {
+          "elementType": "labels.icon",
+          "stylers": [
             {
-                "visibility": "simplified"
+              "visibility": "off"
             }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
+          ]
+        },
+        {
+          "elementType": "labels.text.fill",
+          "stylers": [
             {
-                "visibility": "simplified"
+              "color": "#616161"
             }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
+          ]
+        },
+        {
+          "elementType": "labels.text.stroke",
+          "stylers": [
             {
-                "visibility": "simplified"
+              "color": "#f5f5f5"
             }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
+          ]
+        },
+        {
+          "featureType": "administrative.land_parcel",
+          "elementType": "labels.text.fill",
+          "stylers": [
             {
-                "visibility": "simplified"
+              "color": "#bdbdbd"
             }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "stylers": [
+          ]
+        },
+        {
+          "featureType": "landscape.natural",
+          "elementType": "geometry.fill",
+          "stylers": [
             {
-                "visibility": "simplified"
+              "color": "#929292"
             }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "stylers": [
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [
             {
-                "visibility": "off"
+              "color": "#eeeeee"
             }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "stylers": [
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "geometry.fill",
+          "stylers": [
             {
-                "visibility": "on"
+              "color": "#4369aa"
             }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry",
-        "stylers": [
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text.fill",
+          "stylers": [
             {
-                "visibility": "on"
+              "color": "#757575"
             }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
+          ]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "geometry",
+          "stylers": [
             {
-                "color": "#eae8e2"
-            },
-            {
-                "lightness": 52
+              "color": "#e5e5e5"
             }
-        ]
-    },
-    {
-        "stylers": [
+          ]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "labels.text.fill",
+          "stylers": [
             {
-                "saturation": -17
-            },
-            {
-                "gamma": 0.36
+              "color": "#9e9e9e"
             }
-        ]
-    },
-    {
-        "featureType": "transit.line",
-        "elementType": "geometry",
-        "stylers": [
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [
             {
-                "color": "#243994"
+              "color": "#ffffff"
             }
-        ]
-    }
-]
+          ]
+        },
+        {
+          "featureType": "road.arterial",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#757575"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#dadada"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry.fill",
+          "stylers": [
+            {
+              "color": "#ffffff"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#616161"
+            }
+          ]
+        },
+        {
+          "featureType": "road.local",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#9e9e9e"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.line",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#e5e5e5"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.station",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#eeeeee"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#c9c9c9"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#9e9e9e"
+            }
+          ]
+        }
+      ]
 
   });
   
@@ -124,7 +205,7 @@ function initMap() {
     },
     logo: {
       icon: {
-        url: '../assets/images/avatar.jpg',
+        url: '../assets/images/svg/map_n.svg',
         size: new google.maps.Size(90, 90),
         scaledsize: new google.maps.Size(90, 90)
       }
