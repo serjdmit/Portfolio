@@ -1,3 +1,5 @@
+@import '_mixins';
+
 .footer {
     z-index: 20;
     height: 0;
@@ -7,7 +9,7 @@
         position: absolute;
 
         &--top {
-            bottom: 38px;
+            bottom: 48px;
             background: rgba(28, 41, 21, .85);
             display: flex;
             justify-content: space-between;
@@ -16,23 +18,24 @@
         &--bottom {
             bottom: 0px;
             background: rgba(8, 60, 150, .85);
-            height: 38px;
             left: 0;
             width: 100%;
             text-align: center;
+            padding: 15px 0;
 
             p {
                 font-family: 'Roboto', Arial, Helvetica, sans-serif;
                 font-weight: 200;
                 font-size: 1rem;
                 color: #fff;
+                margin: 0;
             }
         }
     }
 
     &__col {
-        width: 33.333%;
-        padding: 30px;
+        width: calc(100% / 3);
+        padding: 30px 15px;
 
         p {
             margin: 0;
@@ -52,6 +55,10 @@
         &--left {
             position: relative;
 
+            @include desktop {
+                width: calc(410% / 1200 * 100);
+            }
+
             &:after {
                 content: '';
                 height: 90px;
@@ -66,6 +73,11 @@
         }
 
         &--center {
+
+            @include desktop {
+                width: calc(500% / 1200 * 100);
+            }
+
             .menu {
                 &__list {
                     display: flex;
@@ -135,6 +147,11 @@
         }
 
         &--right {
+
+            @include desktop {
+                width: calc(290% / 1200 * 100);
+            }
+
             position: relative;
 
             &:before {

@@ -8,6 +8,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="/assets/styles/app.min.css">
+    <script src="/assets/scripts/foundation.js" defer></script>
   </head>
   <body>
     <section class="section hero">
@@ -44,6 +45,7 @@
       </div>
     </section>
     <main class="section about">
+      <div id="waypoint"></div>
       <div class="about__left">
         <div class="about__left-container">
           <div class="about__left-title">
@@ -66,116 +68,15 @@
       <div class="about__right">
         <div class="about__right-container">
           <div class="about__right-title">
-            <div class="block-subtitle">Чем я могу быть вам полезен</div>
+            <div class="block-subtitle">Чем я могу быть<br>вам полезен</div>
           </div>
           <div class="about__right-description text-content">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, amet facere dolor doloremque at aliquid optio quia alias tenetur nobis magni porro! Consectetur quam magnam dicta ipsa, architecto quibusdam nisi.</p>
           </div>
           <div class="about__right-content">
-            <ul class="skills-list">
-              <li class="skills-list__item">
-                <div class="skills-row">
-                  <div class="skills-row__title">frontend</div>
-                  <ul class="skills-row__list">
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">HTML5</div>
-                        </svg>
-                      </div>
-                    </li>
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">CSS3</div>
-                        </svg>
-                      </div>
-                    </li>
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">JavaScript &amp; jQuery</div>
-                        </svg>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="skills-list__item">
-                <div class="skills-row">
-                  <div class="skills-row__title">backend</div>
-                  <ul class="skills-row__list">
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">HTML5</div>
-                        </svg>
-                      </div>
-                    </li>
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">CSS3</div>
-                        </svg>
-                      </div>
-                    </li>
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">JavaScript &amp; jQuery</div>
-                        </svg>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="skills-list__item">
-                <div class="skills-row">
-                  <div class="skills-row__title">workflow</div>
-                  <ul class="skills-row__list">
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">HTML5</div>
-                        </svg>
-                      </div>
-                    </li>
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">CSS3</div>
-                        </svg>
-                      </div>
-                    </li>
-                    <li class="skills-row__item">
-                      <div class="skill">
-                        <svg class="skill__circle circles" viewBox="0 0 110 110">
-                          <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
-                          <circle class="circle__second circle-15" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)"></circle>
-                          <div class="skill__title">JavaScript &amp; jQuery</div>
-                        </svg>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
+            <div id="app">
+              <skills-list :items="skills"></skills-list>
+            </div>
           </div>
         </div>
       </div>
@@ -265,6 +166,32 @@
     </footer>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfs1fk5Sqwx-lCxh8VLZo0--sGBM_r6Y"></script>
     <script src="./assets/scripts/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="/assets/scripts/about.js" defer></script>
+    <script type="text/x-template" id="skills-list">
+      <div class="wrapper">
+        <ul class="skills-list">
+          <skills-item v-for="item in items" :skill="item" :key="item.id"></skills-item>
+        </ul>
+      </div>
+    </script>
+    <script type="text/x-template" id="skills-item">
+      <li class="skills-list__item">
+        <div class="skills-row">
+          <div class="skills-row__title">{{skill.title}}</div>
+          <ul class="skills-row__list" id="skills">
+            <li class="skills-row__item" v-for="subSkill in skill.subSkills">
+              <div class="skill">
+                <svg class="skill__circle circles" viewBox="0 0 110 110">
+                  <circle class="circle__first" r="45" cx="50%" cy="50%"></circle>
+                  <circle class="circle__second circle__second-hidden" r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" :stroke-dasharray="[307.87582 * ( subSkill.percents /100), ' 282.6']" :stroke-opacity="(( subSkill.percents /100))"></circle>
+                </svg>
+                <div class="skill__title">{{subSkill.subTitle}}</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </script>
   </body>
 </html>

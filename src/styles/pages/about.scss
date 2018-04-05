@@ -1,3 +1,5 @@
+@import '../common/_mixins';
+
 .hero {
 
     &__links {
@@ -162,18 +164,28 @@
     font-size: 2.2875rem;
     text-transform: uppercase;
     white-space: nowrap;
+    text-align: center;
 }
 
 .about {
     display: flex;
     flex-direction: row;
+    overflow: visible;
 
     &__left {
         background: #f2f0e8;
+        width: 50%;
 
         &-container {
             display: flex;
             flex-direction: row;
+
+            @include desktop {
+                flex-direction: column;
+                align-items: center;
+                padding-left: 80px;
+                padding-right: 60px;
+            }
         }
         &-title {
             background: url(../images/stars.png) no-repeat;
@@ -232,6 +244,7 @@
     
     &__right {
         background: #eae8e2;
+        width: 50%;
 
         &-container {
             display: flex;
@@ -282,6 +295,7 @@
                             font-weight: 400;
                             font-size: 0.8725rem;
                             color: #243994;
+                            text-align: center;
                         }
                     }
                 }

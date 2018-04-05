@@ -39,6 +39,7 @@ block content
                 polygon(points="0,0   0,86   500.8,86   500.8,75.5").hero__triangle-left
                 polygon(points="1000,0   1000,86   500,86   500,75.5").hero__triangle-right
     main.section.about
+        #waypoint
         .about__left
             .about__left-container
                 .about__left-title
@@ -58,23 +59,25 @@ block content
         .about__right
             .about__right-container
                 .about__right-title
-                    .block-subtitle Чем я могу быть вам полезен
+                    .block-subtitle Чем я могу быть<br>вам полезен
                 .about__right-description.text-content
                     p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, amet facere dolor doloremque at aliquid optio quia alias tenetur nobis magni porro! Consectetur quam magnam dicta ipsa, architecto quibusdam nisi.
                 .about__right-content
-                    ul.skills-list
-                        each item in ['frontend', 'backend', 'workflow']
-                            li.skills-list__item
-                                .skills-row
-                                    .skills-row__title #{item}
-                                    ul.skills-row__list
-                                        each skill in ['HTML5', 'CSS3', 'JavaScript & jQuery']
-                                            li.skills-row__item
-                                                .skill
-                                                    svg.skill__circle.circles(viewBox='0 0 110 110')
-                                                        circle(r="45" cx="50%" cy="50%").circle__first
-                                                        circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-15
-                                                        .skill__title #{skill}
+                    #app
+                        skills-list(:items="skills")
+                    //- ul.skills-list
+                    //-     each item in ['frontend', 'backend', 'workflow']
+                    //-         li.skills-list__item
+                    //-             .skills-row
+                    //-                 .skills-row__title #{item}
+                    //-                 ul.skills-row__list
+                    //-                     each skill in ['HTML5', 'CSS3', 'JavaScript & jQuery']
+                    //-                         li.skills-row__item
+                    //-                             .skill
+                    //-                                 svg.skill__circle.circles(viewBox='0 0 110 110')
+                    //-                                     circle(r="45" cx="50%" cy="50%").circle__first
+                    //-                                     circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-15
+                    //-                                     .skill__title #{skill}
 
     section.section.map
         .google-map
@@ -96,6 +99,23 @@ block content
                                 svg(width="45" height="45")
                                     use(xlink:href=`../assets/images/sprite/sprite.svg#${contact[0]}`)
                             .contacts-row__title #{contact[1]}
-
 block script
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
     script(src='/assets/scripts/about.js' defer)
+    script(type='text/x-template')#skills-list
+        .wrapper
+            ul.skills-list
+                skills-item(v-for="item in items" :skill="item" :key='item.id')
+    script(type='text/x-template')#skills-item
+        li.skills-list__item
+            .skills-row
+                .skills-row__title {{skill.title}}
+                ul.skills-row__list#skills
+                    li.skills-row__item(v-for="subSkill in skill.subSkills")
+                        .skill
+                            svg.skill__circle.circles(viewBox='0 0 110 110')
+                                circle(r="45" cx="50%" cy="50%").circle__first
+                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" :stroke-dasharray=`[307.87582 * ( subSkill.percents /100), ' 282.6']` :stroke-opacity="(( subSkill.percents /100))").circle__second.circle__second-hidden
+                            .skill__title {{subSkill.subTitle}}
+    
+        

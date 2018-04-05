@@ -12,6 +12,9 @@ const config = {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].js'
     },
+    externals: {
+        jquery: 'jQuery'
+    },
     plugins: [
         new webpack.ProvidePlugin({
           $: 'jquery',

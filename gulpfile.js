@@ -18,6 +18,7 @@ const browserSync = require('browser-sync').create();
 const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
+const concat = require('gulp-concat');
 
 const paths = {
     root: './build',
@@ -130,6 +131,18 @@ function scripts() {
         .pipe(gulp.dest(paths.scripts.dest));
 }
 
+// foundation.js
+function scriptsFoundation() {
+    return gulp.src([
+            './node_modules/jquery/dist/jquery.min.js',
+            // './node_modules/jquery-ui-dist/jquery-ui.min.js',
+            // './node_modules/slick-carousel/slick/slick.min.js',
+            './node_modules/waypoints/lib/noframework.waypoints.min.js'
+        ])
+        .pipe(concat('foundation.js'))
+        .pipe(gulp.dest(paths.scripts.dest));
+}
+
 // галповский вотчер
 function watch() {
     gulp.watch(paths.styles.src, styles);
@@ -177,6 +190,6 @@ exports.fonts = fonts;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, video, fonts, sprites, scripts),
+    gulp.parallel(styles, templates, images, video, fonts, sprites, scripts, scriptsFoundation),
     gulp.parallel(watch, server)
 ));

@@ -1,14 +1,25 @@
 @import 'normalize.css';
-@import 'singularitygs';
 
 $bg-color: #223b65; 
+
+@import 'common/_mixins';
 
 html, body {
     background: $bg-color;
     height: 100%;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
+    
+    @include laptop {
+        font-size: 15px;
+    }
+    @include tablet {
+        font-size: 14px;
+    }
+    @include phone {
+        font-size: 13px;
+    }
 }
 @import 'common/_fonts';
 @import 'common/_sprite';

@@ -1,9 +1,16 @@
+@import '_mixins';
+
 .text-content {
     color: #474b57;
     font-size: 1rem;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     line-height: 1.5;
     font-weight: 300;
+    margin-bottom: 120px;
+
+    @include desktop {
+        margin-bottom: 20px;
+    }
 
     p {
         color: #474b57;
