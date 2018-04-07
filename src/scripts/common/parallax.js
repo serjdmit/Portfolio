@@ -3,8 +3,6 @@ const layers = $('.section-title')[0].children;
 const hero = $('.hero__user')[0];
 const heroLayers = $('.hero__user')[0].children;
 
-console.log(hero);
-
 const moveLayers = e => {
     const initialX = window.innerWidth / 2 - e.pageX;
     const initialY = window.innerHeight / 2 - e.pageY;
@@ -25,5 +23,4 @@ const moveLayers = e => {
     });
 };
 
-console.log(layers);
 window.addEventListener('mousemove', moveLayers);

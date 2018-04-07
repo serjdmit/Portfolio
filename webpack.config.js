@@ -3,6 +3,7 @@ const path = require('path');
 
 const config = {
     entry: {
+        app: './src/scripts/app.js',
         about: './src/scripts/pages/about.js',
         works: './src/scripts/pages/works.js',
         blog: './src/scripts/pages/blog.js',
